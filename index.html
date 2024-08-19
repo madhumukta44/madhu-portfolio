@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="app.css">
+    <script src="https://kit.fontawesome.com/9fa5681db9.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- <img src="image/MADHU_BG.png" id="coverphoto " alt=""> -->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="image/7bg.png" class="logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Abount</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Techie & Artist</p>
+                <h1>Hi,I'm <span>Madhu Mukta</span> <br>, a code-crafting,<br>paint-splashing<br> adventurer on a<br>never-ending <br>creative quest!</h1>
+            </div>
+        </div>
+    </div> 
+<!-- -----------------about---------------  -->
+      <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="image/MADHU_PHOTO.jpg" width="5 0%" alt="">
+                </div>
+                <div class="about-col-2 ">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I’m a 4th-year Computer Science Engineering student at KIIT University with a passion for technology and web development. I enjoy creating innovative digital experiences and expressing my creativity through painting. Outside of tech, I love exploring diverse worlds through movies and maintaining a thoughtful, unbiased view of global issues.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Web Development </span> <br> Proficient in building dynamic and responsive web applications </li>
+                            <li><span>Programming Languages</span><br>Experienced in C/C++, Java, Python, and SQL, with a strong foundation in object-oriented and functional programming paradigms</li>
+                            <li><span>IoT and Embedded Systems</span><br>Experience in designing and programming embedded systems with Arduino, integrating sensors and actuators for real-world applications</li>
+                            <li><span>Soft Skills</span><br>Demonstrated adaptability, problem-solving abilities, effective communication, and leadership in collaborative and project-driven environments.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span> May 2024- June 2024 </span> <br> Salesforce Virtual Internship: Developer Track Intern </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span> 2021– May 2025 </span> <br> Bachelor of Technology in Computer Science and Engineering from KIIT Deemed to be university</li>
+                            <li><span> 2018– May 2020</span><br>Secondary Education and Senior Secondary Education in Pure Science from Delhi Public School ,Bokaro,Jharkhand</li>
+                            <li><span>May 2018</span><br>Matriculation from  Dayanand Anglo Vedic Public School, HFC Barauni, Bihar</li>
+                        </ul>
+                    </div>
+
+                 </div>
+            </div>
+
+
+        </div> 
+
+      </div>
+
+      <!-- -----------------------services--------------- -->
+
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design & Development</h2>
+                <p> <b>Crafting Exceptional Digital Experiences</b> <br>
+
+                    I specialize in creating visually appealing and highly functional websites tailored to meet your specific needs. Whether you need a sleek, modern website for your business or a custom web application, I leverage the latest technologies and frameworks to deliver a seamless user experience. My expertise spans HTML, CSS, JavaScript, ReactJS, NodeJS, and more to ensure your digital presence stands out.</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-palette"></i>
+                <h2>Custom Painting</h2>
+                <p><b>Bringing Your Vision to Life</b><br>
+                    As a passionate painter, I offer custom painting services that capture your unique vision and style. Whether you’re looking for a personal piece to adorn your home or a custom artwork for an event, I can create beautiful and meaningful pieces that reflect your ideas and preferences. Each painting is crafted with care and creativity to make it a true work of art.
+                </p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-robot"></i>
+                <h2>IoT Models & Prototypes</h2>
+                <p><b>Innovative Solutions for Your Projects</b><br>
+                    I design and develop custom IoT models and prototypes tailored to your specific requirements. Using Arduino and other technologies, I create functional and innovative solutions that address real-world challenges. From anti-collision systems to smart devices, I provide end-to-end services from concept to prototype, ensuring that your ideas come to life with precision and effectiveness.
+                </p>
+                <a href="#">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ------------------portfolio------------------- -->
+
+
+
+
+
+
+
+
+<script>
+    var tablinks= document.getElementsByClassName("tab-links");
+    var tabcontents= document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+
+
+</body>
+
+</html>
