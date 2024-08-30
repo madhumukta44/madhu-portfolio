@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Madhu_portfolio</title>
     <link rel="stylesheet" href="app.css">
     <script src="https://kit.fontawesome.com/9fa5681db9.js" crossorigin="anonymous"></script>
 </head>
@@ -15,13 +15,15 @@
         <div class="container">
             <nav>
                 <img src="image/7bg.png" class="logo">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Abount</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">Abount</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
                 </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
                 <p>Techie & Artist</p>
@@ -109,10 +111,75 @@
 </div>
 
 <!-- ------------------portfolio------------------- -->
+ <div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="image/webcam.jpg" alt="">
+                <div class="layer">
+                    <h3>Attendance System using Face Recognition </h3>
+                    <p>The Attendance System using Face Recognition is a web application that simplifies attendance tracking by automatically recognizing faces. It offers a seamless and secure way to manage attendance, enhancing user experience through advanced technology.</p>
+                    <a href="https://github.com/madhumukta44/Attendance-System-using-Face-Recognition.git"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="image/robo.jpg" alt="">
+                <div class="layer">
+                    <h3><div class="layer">
+                        <h3>Anti-Collision System for a vehicle </h3>
+                        <p>The Anti-Collision System for a vehicle is a project focused on enhancing safety by preventing collisions. Built using an Arduino microcontroller, the system processes sensor data to control vehicle movements accurately. Through extensive testing and collaboration, the project ensures reliable and effective performance in avoiding potential accidents.</p>
+                        <a href="https://github.com/madhumukta44/Anti-Collision-System-For-Vehicles.git"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            <div class="work">
+                <img src="image/webdev.jpg" alt="">
+                <div class="layer">
+                    <h3>Web Development </h3>
+                    <p>Coming soon!!</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+    </div>
+ </div>
 
+ <!------------------------------ contact info ------------------------------->
 
-
-
+ <div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>madhumukta44@gmail.com</p>
+                <p><i class="fa-solid fa-square-phone"></i>9798817719</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/madhu.mukta_44?igsh=MXQ3c2g5dzd3NHppbg=="><i class="fa-brands fa-instagram"></i></a>
+                    <a href="http://www.linkedin.com/in/madhu-mukta-050209231"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/madhumukta44"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://drive.google.com/file/d/1BOmnTZ--jesaqjI3F5rZ8z1w7Bo-EMB5/view?usp=sharing"><i class="fa-solid fa-file"></i></a>
+                </div>
+                <a href="image/MadhuMukta_resume_29aug24.pdf" download class="btn btn2">DoWnload CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message" id=""></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p> Made with sincerity and  <i class="fa-solid fa-heart"></i><br> &copy; Madhu Mukta 2024. All rights reserved.</p>
+    </div>
+ </div>
 
 
 
@@ -132,6 +199,34 @@
     }
 </script>
 
+<script>
+    var sidemeu=document.getElementById("sidemenu");
+    function openmenu(){
+        sidemeu.style.right="0";
+    }
+    function closemenu(){
+        sidemeu.style.right="-200px";
+    }
+</script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzoPZO7Ue5snCbucWkLzMjpTfDnJnj5E5EYv3CZy1wc_I8tCBC_WWd3hTwz8-tS-Y-Z/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg=document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML="Thank You for Your Valuable Message!"
+            setTimeout(function(){
+                msg.innerHTML=""
+            },4000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
 
 </body>
 
